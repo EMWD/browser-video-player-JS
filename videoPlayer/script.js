@@ -1,12 +1,9 @@
-
 var videoEl = document.getElementsByTagName('video')[0],
     playBtn = document.getElementById('playBtn'),
     vidControls = document.getElementById('controls'),
     volumeControl = document.getElementById('volume'),
     timePicker = document.getElementById('timer');
     volumeBar = document.getElementById('volume');
-
-
 
 videoEl.addEventListener('canplaythrough', function () {
     vidControls.classList.remove('hidden');
@@ -20,17 +17,10 @@ playBtn.addEventListener('click', function () {
         videoEl.pause();
     }
 }, false);
-
-
-function test(){
-
-}
-
 function mute(){
     videoEl.volume = 0;
     volumeBar.value = "0";
 }
- 
 videoEl.addEventListener('play', function () { 
     playBtn.style.backgroundImage = 'url("img/pause.png")';        
 }, false); 
@@ -52,7 +42,6 @@ videoEl.addEventListener('timeupdate', function () {
     timePicker.innerHTML = secondsToTime(videoEl.currentTime);
 }, false);
  
-
 function secondsToTime(time){
      
     var h = Math.floor(time / (60 * 60)),
